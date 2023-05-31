@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Login"
+        navigationController?.navigationBar.prefersLargeTitles = true
         passwordTextField.isSecureTextEntry = true
         submitButton.layer.cornerRadius = 8
     }
