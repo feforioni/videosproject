@@ -16,23 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-pL-Lpm">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-pL-Lpm">
                                 <rect key="frame" x="113.5" y="414" width="187" height="68"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-FM-WwL">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login : " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-sj-DAE">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ai-fc-lb6" userLabel="LoginTextField">
-                                                <rect key="frame" x="87" y="0.0" width="100" height="34"/>
+                                                <rect key="frame" x="87" y="0.0" width="100" height="30"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="COC-VH-fgc"/>
+                                                    <constraint firstAttribute="height" constant="30" id="pcb-h5-cLp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -40,19 +41,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWD-A4-eVE">
-                                        <rect key="frame" x="0.0" y="34" width="187" height="34"/>
+                                        <rect key="frame" x="0.0" y="38" width="187" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password : " textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHe-dP-Ith">
-                                                <rect key="frame" x="0.0" y="0.0" width="87" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-2d-twm" userLabel="PasswordTextField">
-                                                <rect key="frame" x="87" y="0.0" width="100" height="34"/>
+                                                <rect key="frame" x="87" y="0.0" width="100" height="30"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="9ht-0y-RQi"/>
+                                                    <constraint firstAttribute="height" constant="30" id="tB2-iA-OyO"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -68,11 +70,8 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avb-Qc-z2h" userLabel="SubmitButton">
-                                <rect key="frame" x="107" y="493" width="200" height="30"/>
+                                <rect key="frame" x="113.5" y="493" width="187" height="30"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="A48-ge-bog"/>
-                                </constraints>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -80,18 +79,31 @@
                                     <action selector="onSubmitButtonTapped:" destination="Apt-Fk-hsd" eventType="touchUpInside" id="6qb-t6-k2l"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0e-1D-bk6">
+                                <rect key="frame" x="305.5" y="456" width="26" height="22"/>
+                                <state key="normal" image="eye.slash" catalog="system"/>
+                                <connections>
+                                    <action selector="onEyeButtonTapped:" destination="Apt-Fk-hsd" eventType="touchUpInside" id="deX-c0-HFG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OjO-a1-REl"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="Avb-Qc-z2h" firstAttribute="top" secondItem="dbF-pL-Lpm" secondAttribute="bottom" constant="11" id="2l7-SR-TEa"/>
                             <constraint firstItem="dbF-pL-Lpm" firstAttribute="centerX" secondItem="dWN-K3-mxQ" secondAttribute="centerX" id="4ft-aY-G1a"/>
+                            <constraint firstItem="Avb-Qc-z2h" firstAttribute="trailing" secondItem="dbF-pL-Lpm" secondAttribute="trailing" id="Cev-xV-qcu"/>
                             <constraint firstItem="dbF-pL-Lpm" firstAttribute="centerY" secondItem="dWN-K3-mxQ" secondAttribute="centerY" id="GZH-D4-xzn"/>
                             <constraint firstItem="Avb-Qc-z2h" firstAttribute="centerY" secondItem="dWN-K3-mxQ" secondAttribute="centerY" constant="60" id="PAM-AR-bcJ"/>
+                            <constraint firstItem="Avb-Qc-z2h" firstAttribute="leading" secondItem="dbF-pL-Lpm" secondAttribute="leading" id="WFQ-8k-5v1"/>
+                            <constraint firstItem="X0e-1D-bk6" firstAttribute="leading" secondItem="dbF-pL-Lpm" secondAttribute="trailing" constant="5" id="d1z-Gg-rdd"/>
                             <constraint firstItem="Avb-Qc-z2h" firstAttribute="centerX" secondItem="dWN-K3-mxQ" secondAttribute="centerX" id="hUG-tY-Q2H"/>
+                            <constraint firstItem="X0e-1D-bk6" firstAttribute="centerY" secondItem="hWD-A4-eVE" secondAttribute="centerY" id="jRf-P0-786"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="eyePasswordButton" destination="X0e-1D-bk6" id="EDC-Da-ENU"/>
                         <outlet property="loginTextField" destination="0ai-fc-lb6" id="goy-1m-BvI"/>
                         <outlet property="passwordTextField" destination="4g3-2d-twm" id="rBp-pT-m87"/>
                         <outlet property="resultLabel" destination="Rmm-sU-Bsu" id="6eo-5r-SLP"/>
@@ -171,7 +183,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
