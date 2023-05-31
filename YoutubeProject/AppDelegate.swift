@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  videosproject
+//  YoutubeProject
 //
-//  Created by Henrique Forioni de Lima on 30/05/23.
+//  Created by Felipe Lima on 26/05/23.
 //
 
 import UIKit
