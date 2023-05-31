@@ -16,17 +16,16 @@ class LoginViewController: UIViewController {
     let correctUser = "Felipe"
     let correctPassword = "12345678"
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
         submitButton.layer.cornerRadius = 8
     }
+    
     @IBAction func onEyeButtonTapped(_ sender: Any) {
         if passwordTextField.isSecureTextEntry {
             eyePasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
             passwordTextField.isSecureTextEntry = false
-            
         } else {
             passwordTextField.isSecureTextEntry = true
             eyePasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
@@ -43,21 +42,5 @@ class LoginViewController: UIViewController {
             resultLabel.text = "Fail"
             resultLabel.textColor = .red
         }
-    
-                
     }
-        
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
