@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		55272EEA2A22A68900942915 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55272EE92A22A68900942915 /* LoginViewController.swift */; };
 		556BDE812A214893008BF02D /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556BDE802A214893008BF02D /* PlayerViewController.swift */; };
+		55C868652A27E3390058A1B1 /* VideosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C868642A27E3390058A1B1 /* VideosListViewController.swift */; };
 		55E6EEF22A2141FA001D6192 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6EEF12A2141FA001D6192 /* AppDelegate.swift */; };
 		55E6EEF42A2141FA001D6192 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6EEF32A2141FA001D6192 /* SceneDelegate.swift */; };
 		55E6EEF92A2141FA001D6192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E6EEF72A2141FA001D6192 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		55272EE92A22A68900942915 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		556BDE802A214893008BF02D /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		55C868642A27E3390058A1B1 /* VideosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosListViewController.swift; sourceTree = "<group>"; };
 		55E6EEEE2A2141FA001D6192 /* YoutubeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E6EEF12A2141FA001D6192 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E6EEF32A2141FA001D6192 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		553E6E512A27E6C400F4FC13 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				55E6EEF32A2141FA001D6192 /* SceneDelegate.swift */,
+				55E6EEF12A2141FA001D6192 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		553E6E522A27E6E100F4FC13 /* Resources  */ = {
+			isa = PBXGroup;
+			children = (
+				55E6EEF72A2141FA001D6192 /* Main.storyboard */,
+				55E6EEFC2A214206001D6192 /* LaunchScreen.storyboard */,
+				55E6EEFA2A214206001D6192 /* Assets.xcassets */,
+			);
+			path = "Resources ";
+			sourceTree = "<group>";
+		};
+		553E6E532A27E70D00F4FC13 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				556BDE802A214893008BF02D /* PlayerViewController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		553E6E542A27E71B00F4FC13 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				55272EE92A22A68900942915 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		553E6E5A2A27E74900F4FC13 /* VideosList */ = {
+			isa = PBXGroup;
+			children = (
+				55C868642A27E3390058A1B1 /* VideosListViewController.swift */,
+			);
+			path = VideosList;
+			sourceTree = "<group>";
+		};
+		55827B3B2A27E47A00736C2C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				55827B3C2A27E4B100736C2C /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		55827B3C2A27E4B100736C2C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				553E6E542A27E71B00F4FC13 /* Login */,
+				553E6E532A27E70D00F4FC13 /* Player */,
+				553E6E5A2A27E74900F4FC13 /* VideosList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		55E6EEE52A2141FA001D6192 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +164,10 @@
 		55E6EEF02A2141FA001D6192 /* YoutubeProject */ = {
 			isa = PBXGroup;
 			children = (
-				55E6EEF12A2141FA001D6192 /* AppDelegate.swift */,
-				55E6EEF32A2141FA001D6192 /* SceneDelegate.swift */,
-				556BDE802A214893008BF02D /* PlayerViewController.swift */,
-				55272EE92A22A68900942915 /* LoginViewController.swift */,
-				55E6EEF72A2141FA001D6192 /* Main.storyboard */,
-				55E6EEFA2A214206001D6192 /* Assets.xcassets */,
-				55E6EEFC2A214206001D6192 /* LaunchScreen.storyboard */,
+				553E6E512A27E6C400F4FC13 /* Application */,
 				55E6EEFF2A214206001D6192 /* Info.plist */,
+				55827B3B2A27E47A00736C2C /* Presentation */,
+				553E6E522A27E6E100F4FC13 /* Resources  */,
 			);
 			path = YoutubeProject;
 			sourceTree = "<group>";
@@ -264,6 +323,7 @@
 				55272EEA2A22A68900942915 /* LoginViewController.swift in Sources */,
 				55E6EEF22A2141FA001D6192 /* AppDelegate.swift in Sources */,
 				55E6EEF42A2141FA001D6192 /* SceneDelegate.swift in Sources */,
+				55C868652A27E3390058A1B1 /* VideosListViewController.swift in Sources */,
 				556BDE812A214893008BF02D /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
