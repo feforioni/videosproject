@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +36,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Login" id="UC1-zz-hfw">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <segue destination="Apt-Fk-hsd" kind="show" id="Ai9-5b-4cK"/>
+                                <action selector="onLoginButtonTapped:" destination="BVY-N0-2xK" id="VLM-OA-8fH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -63,196 +62,13 @@
             </objects>
             <point key="canvasLocation" x="-2413" y="113"/>
         </scene>
-        <!--Login View Controller-->
-        <scene sceneID="x97-qm-qdF">
-            <objects>
-                <viewController id="Apt-Fk-hsd" customClass="LoginViewController" customModule="YoutubeProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dWN-K3-mxQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-pL-Lpm">
-                                <rect key="frame" x="113.5" y="414" width="187" height="68"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-FM-WwL">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login : " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-sj-DAE">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ai-fc-lb6" userLabel="LoginTextField">
-                                                <rect key="frame" x="87" y="0.0" width="100" height="30"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="COC-VH-fgc"/>
-                                                    <constraint firstAttribute="height" constant="30" id="pcb-h5-cLp"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWD-A4-eVE">
-                                        <rect key="frame" x="0.0" y="38" width="187" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password : " textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHe-dP-Ith">
-                                                <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-2d-twm" userLabel="PasswordTextField">
-                                                <rect key="frame" x="87" y="0.0" width="100" height="30"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="9ht-0y-RQi"/>
-                                                    <constraint firstAttribute="height" constant="30" id="tB2-iA-OyO"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmm-sU-Bsu" userLabel="ResultLabel">
-                                        <rect key="frame" x="0.0" y="68" width="187" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avb-Qc-z2h" userLabel="SubmitButton">
-                                <rect key="frame" x="113.5" y="493" width="187" height="30"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSubmitButtonTapped:" destination="Apt-Fk-hsd" eventType="touchUpInside" id="6qb-t6-k2l"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0e-1D-bk6">
-                                <rect key="frame" x="305.5" y="456" width="26" height="22"/>
-                                <state key="normal" image="eye.slash" catalog="system"/>
-                                <connections>
-                                    <action selector="onEyeButtonTapped:" destination="Apt-Fk-hsd" eventType="touchUpInside" id="deX-c0-HFG"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="OjO-a1-REl"/>
-                        <color key="backgroundColor" name="YoutubeBackgroundColor"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <constraints>
-                            <constraint firstItem="Avb-Qc-z2h" firstAttribute="top" secondItem="dbF-pL-Lpm" secondAttribute="bottom" constant="11" id="2l7-SR-TEa"/>
-                            <constraint firstItem="dbF-pL-Lpm" firstAttribute="centerX" secondItem="dWN-K3-mxQ" secondAttribute="centerX" id="4ft-aY-G1a"/>
-                            <constraint firstItem="Avb-Qc-z2h" firstAttribute="trailing" secondItem="dbF-pL-Lpm" secondAttribute="trailing" id="Cev-xV-qcu"/>
-                            <constraint firstItem="dbF-pL-Lpm" firstAttribute="centerY" secondItem="dWN-K3-mxQ" secondAttribute="centerY" id="GZH-D4-xzn"/>
-                            <constraint firstItem="Avb-Qc-z2h" firstAttribute="centerY" secondItem="dWN-K3-mxQ" secondAttribute="centerY" constant="60" id="PAM-AR-bcJ"/>
-                            <constraint firstItem="Avb-Qc-z2h" firstAttribute="leading" secondItem="dbF-pL-Lpm" secondAttribute="leading" id="WFQ-8k-5v1"/>
-                            <constraint firstItem="X0e-1D-bk6" firstAttribute="leading" secondItem="dbF-pL-Lpm" secondAttribute="trailing" constant="5" id="d1z-Gg-rdd"/>
-                            <constraint firstItem="Avb-Qc-z2h" firstAttribute="centerX" secondItem="dWN-K3-mxQ" secondAttribute="centerX" id="hUG-tY-Q2H"/>
-                            <constraint firstItem="X0e-1D-bk6" firstAttribute="centerY" secondItem="hWD-A4-eVE" secondAttribute="centerY" id="jRf-P0-786"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="jXg-Wu-dcy"/>
-                    <connections>
-                        <outlet property="eyePasswordButton" destination="X0e-1D-bk6" id="EDC-Da-ENU"/>
-                        <outlet property="loginTextField" destination="0ai-fc-lb6" id="goy-1m-BvI"/>
-                        <outlet property="passwordTextField" destination="4g3-2d-twm" id="rBp-pT-m87"/>
-                        <outlet property="resultLabel" destination="Rmm-sU-Bsu" id="6eo-5r-SLP"/>
-                        <outlet property="submitButton" destination="Avb-Qc-z2h" id="eA7-Dg-sZr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xZX-Ks-WG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-659.4202898550725" y="101.78571428571428"/>
-        </scene>
-        <!--Player View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="YoutubeProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Views :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZG-WL-FlQ">
-                                <rect key="frame" x="87" y="522" width="54" height="20.5"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJr-fN-y08" userLabel="PlayerView">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWy-5A-iLZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="tintColor" systemColor="systemRedColor"/>
-                                        <state key="normal" image="play.rectangle.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="onPlayButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HUE-Y0-yzG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="vWy-5A-iLZ" secondAttribute="bottom" id="ASJ-90-sCV"/>
-                                    <constraint firstAttribute="height" constant="128" id="CLW-s4-FKT"/>
-                                    <constraint firstItem="vWy-5A-iLZ" firstAttribute="top" secondItem="DJr-fN-y08" secondAttribute="top" id="Kcv-5c-8SP"/>
-                                    <constraint firstAttribute="trailing" secondItem="vWy-5A-iLZ" secondAttribute="trailing" id="Nbl-xE-6Bd"/>
-                                    <constraint firstItem="vWy-5A-iLZ" firstAttribute="leading" secondItem="DJr-fN-y08" secondAttribute="leading" id="mD6-s4-S4D"/>
-                                    <constraint firstAttribute="width" constant="240" id="xQ9-lc-kl7"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2X3-8G-IpD" userLabel="ViewCountLabel">
-                                <rect key="frame" x="149" y="522" width="10.5" height="20.5"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="YoutubeBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="DJr-fN-y08" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8OH-TC-AGB"/>
-                            <constraint firstItem="2X3-8G-IpD" firstAttribute="leading" secondItem="QZG-WL-FlQ" secondAttribute="trailing" constant="8" id="DAn-49-HfI"/>
-                            <constraint firstItem="2X3-8G-IpD" firstAttribute="centerY" secondItem="QZG-WL-FlQ" secondAttribute="centerY" id="DNY-fc-KoN"/>
-                            <constraint firstItem="QZG-WL-FlQ" firstAttribute="leading" secondItem="DJr-fN-y08" secondAttribute="leading" id="Qaa-NX-Op3"/>
-                            <constraint firstItem="QZG-WL-FlQ" firstAttribute="baseline" secondItem="2X3-8G-IpD" secondAttribute="baseline" id="c44-Zj-Bh0"/>
-                            <constraint firstItem="QZG-WL-FlQ" firstAttribute="baseline" secondItem="2X3-8G-IpD" secondAttribute="firstBaseline" id="jLC-yB-MXV"/>
-                            <constraint firstItem="QZG-WL-FlQ" firstAttribute="top" secondItem="DJr-fN-y08" secondAttribute="bottom" constant="10" id="nSS-pD-XgZ"/>
-                            <constraint firstItem="DJr-fN-y08" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uAo-WP-kvT"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="playButton" destination="vWy-5A-iLZ" id="Xfq-j3-kHc"/>
-                        <outlet property="viewCountLabel" destination="2X3-8G-IpD" id="DV8-wq-Vlb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="eye.slash" catalog="system" width="128" height="86"/>
-        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
         <namedColor name="YoutubeBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
