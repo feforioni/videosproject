@@ -16,4 +16,9 @@ class VideosListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
+    @IBAction func onLoginButtonTapped(_ sender: Any) {
+        navigationController?.pushViewController(LoginViewController(), animated: true)
+    }
 }
+
+

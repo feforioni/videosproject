@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="YoutubeProject" customModuleProvider="target">
+            <connections>
+                <outlet property="playButton" destination="Qkp-0e-X8s" id="3d3-qf-Dea"/>
+                <outlet property="view" destination="iN0-l3-epB" id="m5g-je-BXr"/>
+                <outlet property="viewCountLabel" destination="NLj-kM-tLj" id="9Vd-rR-cfk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLj-kM-tLj" userLabel="ViewCountLabel">
+                    <rect key="frame" x="111" y="409" width="10.5" height="20.5"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-YE-lIx" userLabel="PlayerView">
+                    <rect key="frame" x="49" y="271" width="240" height="128"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkp-0e-X8s">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <state key="normal" image="play.rectangle.fill" catalog="system"/>
+                            <connections>
+                                <action selector="onPlayButtonTapped:" destination="-1" eventType="touchUpInside" id="D2R-QI-53Q"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="5UV-5n-yJ7"/>
+                        <constraint firstAttribute="trailing" secondItem="Qkp-0e-X8s" secondAttribute="trailing" id="e1V-gd-Lpc"/>
+                        <constraint firstItem="Qkp-0e-X8s" firstAttribute="leading" secondItem="lSj-YE-lIx" secondAttribute="leading" id="fQg-KR-c9e"/>
+                        <constraint firstItem="Qkp-0e-X8s" firstAttribute="top" secondItem="lSj-YE-lIx" secondAttribute="top" id="h7q-A6-vyg"/>
+                        <constraint firstAttribute="width" constant="240" id="irM-Lk-Cnu"/>
+                        <constraint firstAttribute="bottom" secondItem="Qkp-0e-X8s" secondAttribute="bottom" id="kR5-u5-gHq"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Views :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0d-Ij-vq4">
+                    <rect key="frame" x="49" y="409" width="54" height="20.5"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="NLj-kM-tLj" firstAttribute="leading" secondItem="n0d-Ij-vq4" secondAttribute="trailing" constant="8" id="4Nh-AV-bhX"/>
+                <constraint firstItem="n0d-Ij-vq4" firstAttribute="top" secondItem="lSj-YE-lIx" secondAttribute="bottom" constant="10" id="CkR-pk-7Tx"/>
+                <constraint firstItem="lSj-YE-lIx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="227" id="T0f-kF-sEq"/>
+                <constraint firstItem="NLj-kM-tLj" firstAttribute="top" secondItem="lSj-YE-lIx" secondAttribute="bottom" constant="10" id="Ti7-Kd-Kla"/>
+                <constraint firstItem="lSj-YE-lIx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="49" id="lIu-td-ZCe"/>
+                <constraint firstItem="n0d-Ij-vq4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="49" id="rfA-WO-WzC"/>
+            </constraints>
+            <point key="canvasLocation" x="142" y="107"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -13,9 +13,10 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var viewCountLabel: UILabel!
     var viewCount = 0
     var isPaused = true
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     @IBAction func onPlayButtonTapped(_ sender: Any) {
