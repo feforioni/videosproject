@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LwE-zg-2C2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fRg-jr-50V">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Eih-xT-AxU">
+            <objects>
+                <navigationController id="fRg-jr-50V" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tmf-iV-5n5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BVY-N0-2xK" kind="relationship" relationship="rootViewController" id="esg-ju-la7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVs-pe-ynT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2410" y="113"/>
+        </scene>
         <!--YouTube-->
         <scene sceneID="Nu9-Et-ddF">
             <objects>
@@ -18,13 +34,61 @@
                         <color key="backgroundColor" name="YoutubeBackgroundColor"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Mof-KY-Hs8">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="meuIdentificador" rowHeight="318" id="Mof-KY-Hs8" customClass="VideoTableViewCell" customModule="YoutubeProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="318"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mof-KY-Hs8" id="UA2-2s-4VV">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="318"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ThumbNail" translatesAutoresizingMaskIntoConstraints="NO" id="uac-jj-dTK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="uac-jj-dTK" secondAttribute="height" multiplier="16:9" id="spG-jR-SMb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Windows is AI now" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXc-gh-137">
+                                            <rect key="frame" x="82" y="248" width="308" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channelphoto" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-ni-9xW">
+                                            <rect key="frame" x="24" y="241" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="9se-Wd-HbU"/>
+                                                <constraint firstAttribute="width" constant="50" id="IvN-me-lVp"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j63-uW-pAh">
+                                            <rect key="frame" x="82" y="276.5" width="308" height="17"/>
+                                            <string key="text">Techlinked • 474K views
+</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="j63-uW-pAh" firstAttribute="top" secondItem="JXc-gh-137" secondAttribute="bottom" constant="8" id="RHD-xJ-r6L"/>
+                                        <constraint firstItem="sLM-ni-9xW" firstAttribute="leading" secondItem="UA2-2s-4VV" secondAttribute="leading" constant="24" id="RyG-y6-x0e"/>
+                                        <constraint firstItem="uac-jj-dTK" firstAttribute="leading" secondItem="UA2-2s-4VV" secondAttribute="leading" id="SpS-EX-TT3"/>
+                                        <constraint firstAttribute="trailing" secondItem="j63-uW-pAh" secondAttribute="trailing" constant="24" id="Um2-4p-EdK"/>
+                                        <constraint firstAttribute="trailing" secondItem="JXc-gh-137" secondAttribute="trailing" constant="24" id="X7O-Vw-fnB"/>
+                                        <constraint firstItem="uac-jj-dTK" firstAttribute="top" secondItem="UA2-2s-4VV" secondAttribute="top" id="cI6-eN-ZQ9"/>
+                                        <constraint firstAttribute="trailing" secondItem="uac-jj-dTK" secondAttribute="trailing" id="hfq-LT-PEB"/>
+                                        <constraint firstItem="j63-uW-pAh" firstAttribute="leading" secondItem="sLM-ni-9xW" secondAttribute="trailing" constant="8" id="isY-nM-qED"/>
+                                        <constraint firstItem="JXc-gh-137" firstAttribute="top" secondItem="uac-jj-dTK" secondAttribute="bottom" constant="15" id="nAi-qR-pvk"/>
+                                        <constraint firstItem="sLM-ni-9xW" firstAttribute="top" secondItem="uac-jj-dTK" secondAttribute="bottom" constant="8" id="t6H-dU-9OB"/>
+                                        <constraint firstItem="JXc-gh-137" firstAttribute="leading" secondItem="sLM-ni-9xW" secondAttribute="trailing" constant="8" id="xDh-3P-evm"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="channelAndViewLabel" destination="j63-uW-pAh" id="QBb-JO-Shv"/>
+                                    <outlet property="channelLogoImageView" destination="sLM-ni-9xW" id="83B-u2-rch"/>
+                                    <outlet property="thumbnailImageView" destination="uac-jj-dTK" id="9YR-eT-grH"/>
+                                    <outlet property="tittleVideoLabel" destination="JXc-gh-137" id="QV3-YU-jCf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,6 +97,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="YouTube" id="yvP-sS-9K5">
+                        <barButtonItem key="leftBarButtonItem" image="play.rectangle.fill" catalog="system" id="3jc-rA-gKS">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Login" id="UC1-zz-hfw">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -43,27 +110,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8S-KL-5rC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1520" y="113"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="NoN-bB-JzT">
-            <objects>
-                <navigationController id="LwE-zg-2C2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iAW-8y-Qa9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BVY-N0-2xK" kind="relationship" relationship="rootViewController" id="hVc-85-9gt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mRB-h1-4Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2413" y="113"/>
+            <point key="canvasLocation" x="-1520.289855072464" y="112.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ThumbNail" width="720" height="404"/>
+        <image name="channelphoto" width="68" height="68"/>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
         <namedColor name="YoutubeBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
