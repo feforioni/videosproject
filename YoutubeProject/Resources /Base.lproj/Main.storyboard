@@ -97,6 +97,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="YouTube" id="yvP-sS-9K5">
+                        <barButtonItem key="leftBarButtonItem" image="play.rectangle.fill" catalog="system" id="3jc-rA-gKS">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Login" id="UC1-zz-hfw">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
@@ -113,6 +116,7 @@
     <resources>
         <image name="ThumbNail" width="720" height="404"/>
         <image name="channelphoto" width="68" height="68"/>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
         <namedColor name="YoutubeBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
