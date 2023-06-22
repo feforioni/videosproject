@@ -64,11 +64,11 @@
 		55E5A2C72A36700100031083 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				55C868642A27E3390058A1B1 /* VideosListViewController.swift */,
 				55272EE92A22A68900942915 /* LoginViewController.swift */,
-				5500D64F2A2FE868001325C8 /* PlayerViewController.xib */,
 				5500D64A2A2FE238001325C8 /* LoginViewController.xib */,
 				556BDE802A214893008BF02D /* PlayerViewController.swift */,
+				5500D64F2A2FE868001325C8 /* PlayerViewController.xib */,
+				55C868642A27E3390058A1B1 /* VideosListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

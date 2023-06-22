@@ -23,13 +23,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1A-2H-vKz">
-                    <rect key="frame" x="24" y="148" width="76.5" height="31.5"/>
+                    <rect key="frame" x="24" y="242.5" width="76.5" height="31.5"/>
                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Iga-oI-a3C">
-                    <rect key="frame" x="24" y="219.5" width="366" height="300"/>
+                    <rect key="frame" x="24" y="298" width="366" height="300"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Syo-Rd-axY">
                             <rect key="frame" x="0.0" y="0.0" width="366" height="64"/>
@@ -84,8 +84,8 @@
                 <constraint firstItem="J1A-2H-vKz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="Fic-8m-ihk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Iga-oI-a3C" secondAttribute="trailing" constant="24" id="bPd-pf-vW9"/>
                 <constraint firstItem="Iga-oI-a3C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="fd0-97-7mP"/>
-                <constraint firstItem="Iga-oI-a3C" firstAttribute="top" secondItem="J1A-2H-vKz" secondAttribute="bottom" constant="40" id="oMM-u3-sp5"/>
-                <constraint firstItem="J1A-2H-vKz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="104" id="rfU-r7-jtd"/>
+                <constraint firstItem="Iga-oI-a3C" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nSA-Zh-V6A"/>
+                <constraint firstItem="Iga-oI-a3C" firstAttribute="top" secondItem="J1A-2H-vKz" secondAttribute="bottom" constant="24" id="oMM-u3-sp5"/>
             </constraints>
             <point key="canvasLocation" x="141" y="107"/>
         </view>
