@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "printytvideo.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
