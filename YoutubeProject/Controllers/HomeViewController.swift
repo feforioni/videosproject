@@ -11,36 +11,19 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
         view.addSubview(loadingView)
         showLoading()
-        let baseUrl = "https://www.googleapis.com/youtube/v3/videos"
-        let parameters = "?part=snippet,statistics&chart=mostPopular&key=AIzaSyBKAadctzYEKlHs3GbS4NtkCD4mxD4OhrE"
-        guard let url = URL(string: baseUrl + parameters) else {
+       
+        guard let url = constructUrl() else {
             showAlert(message: "Invalid URL")
             return
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if error != nil {
-                self.showAlert(message: error?.localizedDescription ?? "")
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
+            if self.hasErrors(error, data) {
                 return
             }
-            guard let data = data else {
-                DispatchQueue.main.sync {
-                    self.showAlert(message: "No data")
-                }
-                return
-            }
-            // items[0] --> snippet --> thumbnails --> highDefinitionVersion --> url
-            //print(String(decoding: data, as: UTF8.self))
             let decoder = JSONDecoder()
             do {
-               let videoListResponse = try decoder.decode(YoutubeVideoListResponse.self, from: data)
-                let snippet = videoListResponse.items[0].snippet
-                let video1 = Video(
-                    title: snippet.title,
-                    thumbUrlString: snippet.thumbnails.highDefinitionVersion.url,
-                    channelName: snippet.channelTitle,
-                    views: Int(videoListResponse.items[0].statistics.viewCount) ?? 0,
-                    channelImageUrlString: "")
-                self.videosList.append(video1)
+                let videoListResponse = try decoder.decode(YoutubeVideoListResponse.self, from: data!)
+                self.populateVideosList(items: videoListResponse.items)
             } catch {
                 DispatchQueue.main.sync {
                     self.showAlert(message: error.localizedDescription)
@@ -51,7 +34,42 @@ class HomeViewController: UITableViewController {
                 self.tableView.reloadData()
                 self.hideShowLoading()
             }
-        }.resume()
+        }
+        
+        dataTask.resume()
+    }
+    
+    func hasErrors(_ error: Error?, _ data: Data?) -> Bool {
+        DispatchQueue.main.sync {
+            if error != nil {
+                self.showAlert(message: error?.localizedDescription ?? "")
+                return true
+            }
+            if data == nil {
+                self.showAlert(message: "No data")
+                return true
+            }
+            return false
+        }
+    }
+    func populateVideosList(items: [Item]) {
+        items.forEach { item in
+            let snippet = item.snippet
+            let video = Video(
+                title: snippet.title,
+                thumbUrlString: snippet.thumbnails.highDefinitionVersion.url,
+                channelName: snippet.channelTitle,
+                views: Int(item.statistics.viewCount) ?? 0,
+                channelImageUrlString: "")
+            self.videosList.append(video)
+        }
+    }
+    
+    func constructUrl() -> URL? {
+        let baseUrl = "https://www.googleapis.com/youtube/v3/videos"
+        let parameters = "?part=snippet,statistics&chart=mostPopular&key=AIzaSyBKAadctzYEKlHs3GbS4NtkCD4mxD4OhrE"
+        let fullString = baseUrl + parameters
+        return URL(string: fullString)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -75,10 +93,8 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let videoAtual = videosList[indexPath.row]
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: "meuIdentificador") as! VideoTableViewCell
-        cell.configure(with: videoAtual)
+        cell.configure(with: videosList[indexPath.row])
         return cell
     }
     
