@@ -54,7 +54,7 @@ class PlayerViewController: UIViewController {
     }
     
     func styleLikeButtons() {
-        if isLiked == true && isDisliked == false {
+        if isLiked, !isDisliked {
             thumbsDownButton.tintColor = .label
             thumbsUpButton.tintColor = .blue
         } else if isLiked == false && isDisliked == true {
