@@ -9,9 +9,9 @@ import UIKit
 
 struct Video {
     var title: String
-    var thumbName: String
+    var thumbUrlString: String
     var channelName: String
     var views: Int
-    var channelImageName: String
+    var channelImageUrlString: String
 }
 

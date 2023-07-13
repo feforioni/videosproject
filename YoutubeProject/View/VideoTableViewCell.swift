@@ -5,6 +5,7 @@
 //  Created by Felipe Lima on 14/06/23.
 //
 
+import Kingfisher
 import UIKit
 
 class VideoTableViewCell: UITableViewCell {
@@ -14,12 +15,14 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var tittleVideoLabel: UILabel!
     
+    // Constants
+    private let channelImageViewHeight: CGFloat = 50
+    
     func configure(with videoAtual: Video) {
         tittleVideoLabel.text = videoAtual.title
-        thumbnailImageView.image = UIImage(named: videoAtual.thumbName)
-        channelLogoImageView.layer.cornerRadius = 25
+        let thumbImageURL = URL(string: videoAtual.thumbUrlString)
+        thumbnailImageView.kf.setImage(with: thumbImageURL)
+        channelLogoImageView.layer.cornerRadius = channelImageViewHeight / 2
         channelAndViewLabel.text = "\(videoAtual.channelName) • \(videoAtual.views)K"
     }
-    
-    
 }
