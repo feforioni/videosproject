@@ -4,7 +4,6 @@ import UIKit
 
 class HomeViewController: UITableViewController {
     var videosList: [Video] = []
-    let videosRepository = VideosRepository.init()
     let loadingView = LoadingView()
 
     override func viewDidLoad() {
@@ -56,6 +55,7 @@ class HomeViewController: UITableViewController {
         items.forEach { item in
             let snippet = item.snippet
             let video = Video(
+                id: item.id,
                 title: snippet.title,
                 thumbUrlString: snippet.thumbnails.highDefinitionVersion.url,
                 channelName: snippet.channelTitle,
@@ -99,7 +99,10 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(PlayerViewController(), animated: true)
+        let indice = indexPath.row
+        let id = videosList[indice].id
+        let title = videosList[indice].title
+        navigationController?.pushViewController(PlayerViewController(videoId: id, title: title ), animated: true)
     }
     
     @IBAction func onLoginButtonTapped(_ sender: Any) {

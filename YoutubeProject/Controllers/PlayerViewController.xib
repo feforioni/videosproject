@@ -13,10 +13,12 @@
             <connections>
                 <outlet property="loadingActIndicator" destination="PdK-fc-d4A" id="oqY-j3-yKu"/>
                 <outlet property="playButton" destination="Qkp-0e-X8s" id="3d3-qf-Dea"/>
+                <outlet property="playerView" destination="lSj-YE-lIx" id="r9z-Tv-1uZ"/>
                 <outlet property="subscribeButton" destination="9G6-Zk-4sR" id="JWY-CU-65o"/>
                 <outlet property="thumbImageView" destination="Wvr-1h-AeJ" id="2E7-jR-QD1"/>
                 <outlet property="thumbsDownButton" destination="xXI-WV-093" id="eQX-lI-QoU"/>
                 <outlet property="thumbsUpButton" destination="wjg-N3-OK1" id="rvN-FY-rHS"/>
+                <outlet property="videoTitleLabel" destination="VNu-TW-6eU" id="Yz4-1E-hHV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="m5g-je-BXr"/>
             </connections>
         </placeholder>
@@ -25,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-YE-lIx" userLabel="PlayerView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-YE-lIx" userLabel="PlayerView" customClass="WKYTPlayerView">
                     <rect key="frame" x="0.0" y="44" width="414" height="233"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="printytvideo" translatesAutoresizingMaskIntoConstraints="NO" id="Wvr-1h-AeJ">
@@ -64,8 +66,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-xT-H1q" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="406" height="1300"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Windows is AI now" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNu-TW-6eU">
-                                    <rect key="frame" x="12" y="25" width="148" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Video tittle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNu-TW-6eU">
+                                    <rect key="frame" x="12" y="25" width="224" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -208,6 +210,7 @@
                                 <constraint firstItem="Z3R-wl-AnF" firstAttribute="top" secondItem="pa2-Ds-Ugd" secondAttribute="bottom" constant="12" id="je9-Ex-a2p"/>
                                 <constraint firstItem="5Yp-fX-YQe" firstAttribute="leading" secondItem="Z3R-wl-AnF" secondAttribute="trailing" constant="10" id="pAG-oG-LJz"/>
                                 <constraint firstAttribute="trailing" secondItem="qxK-Db-niw" secondAttribute="trailing" id="pJg-ah-U71"/>
+                                <constraint firstItem="3UN-uY-bjB" firstAttribute="leading" secondItem="VNu-TW-6eU" secondAttribute="trailing" constant="10" id="pfT-CO-eIy"/>
                                 <constraint firstItem="pa2-Ds-Ugd" firstAttribute="top" secondItem="VNu-TW-6eU" secondAttribute="bottom" constant="10" id="t8s-AJ-3yy"/>
                                 <constraint firstItem="VNu-TW-6eU" firstAttribute="leading" secondItem="IJd-xT-H1q" secondAttribute="leading" constant="12" id="tbO-5o-COW"/>
                                 <constraint firstItem="5Yp-fX-YQe" firstAttribute="top" secondItem="DFo-Pq-Jn5" secondAttribute="bottom" constant="4" id="v8n-PX-ss1"/>

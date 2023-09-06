@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import YoutubePlayer_in_WKWebView
 
-class PlayerViewController: UIViewController {
+class PlayerViewController: UIViewController, WKYTPlayerViewDelegate {
 
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var playerView: WKYTPlayerView!
     @IBOutlet weak var loadingActIndicator: UIActivityIndicatorView!
     @IBOutlet weak var subscribeButton: UIButton!
+    @IBOutlet weak var videoTitleLabel: UILabel!
     @IBOutlet weak var thumbsUpButton: UIButton!
     @IBOutlet weak var thumbsDownButton: UIButton!
     var viewCount = 0
@@ -20,9 +23,25 @@ class PlayerViewController: UIViewController {
     var isLiked = false
     var isDisliked = false
     var isSubscribed = false
+    var id: String
+    var videoTittle: String
+    
+    init(videoId: String, title: String) {
+        self.id = videoId
+        self.videoTittle = title
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        videoTitleLabel.text = videoTittle
+        playerView.delegate = self
+        playerView.load(withVideoId: id)
         loadingActIndicator.isHidden = true
         loadingActIndicator.isUserInteractionEnabled = false
         subscribeButton.layer.cornerRadius = 15
@@ -51,6 +70,10 @@ class PlayerViewController: UIViewController {
         isDisliked = !isDisliked
         isLiked = false
         styleLikeButtons()
+    }
+    
+    func playerViewDidBecomeReady(_ playerView: WKYTPlayerView) {
+        playerView.playVideo()
     }
     
     func styleLikeButtons() {

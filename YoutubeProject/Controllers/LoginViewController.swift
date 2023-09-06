@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
         validateLoginTextField()
         if loginTextField.text == correctUser,
            passwordTextField.text == correctPassword {
-            navigationController?.pushViewController(PlayerViewController(), animated: true)
+            navigationController?.popViewController(animated: true)
         } else {
             let alert = UIAlertController(title: "Error", message: "User name or password incorrect", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)

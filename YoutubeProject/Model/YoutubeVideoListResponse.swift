@@ -12,6 +12,7 @@ struct YoutubeVideoListResponse: Decodable {
 }
 
 struct Item: Decodable {
+    var id: String
     var snippet: Snippet
     var statistics: Statistics
 }

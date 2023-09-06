@@ -8,6 +8,7 @@
 import UIKit
 
 struct Video {
+    var id: String
     var title: String
     var thumbUrlString: String
     var channelName: String

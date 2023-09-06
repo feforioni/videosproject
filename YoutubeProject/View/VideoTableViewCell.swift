@@ -18,11 +18,23 @@ class VideoTableViewCell: UITableViewCell {
     // Constants
     private let channelImageViewHeight: CGFloat = 50
     
+    
     func configure(with videoAtual: Video) {
         tittleVideoLabel.text = videoAtual.title
         let thumbImageURL = URL(string: videoAtual.thumbUrlString)
         thumbnailImageView.kf.setImage(with: thumbImageURL)
         channelLogoImageView.layer.cornerRadius = channelImageViewHeight / 2
-        channelAndViewLabel.text = "\(videoAtual.channelName) • \(videoAtual.views)K"
+        var formattedViews: String = ""
+        let views = Double(videoAtual.views)
+        if views < 1000 {
+            formattedViews = String(views)
+        } else if views >= 1000 {
+            if views < 1000000 {
+                formattedViews = String(format: "%.1f", views / 1000) + "K"
+            } else {
+                formattedViews = String(format: "%.1f", views / 1000000) + "M"
+            }
+        }
+        channelAndViewLabel.text = "\(videoAtual.channelName) • \(formattedViews)"
     }
 }
